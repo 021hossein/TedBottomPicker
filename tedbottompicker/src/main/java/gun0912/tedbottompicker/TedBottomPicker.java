@@ -462,7 +462,7 @@ public class TedBottomPicker extends BottomSheetDialogFragment {
             imageFile = File.createTempFile(
                     imageFileName,  /* prefix */
                     ".jpg",         /* suffix */
-                    storageDir      /* directory */
+                    getContext().getCacheDir()       /* directory */
             );
 
 
