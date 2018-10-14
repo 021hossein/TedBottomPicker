@@ -454,7 +454,7 @@ public class TedBottomPicker extends BottomSheetDialogFragment {
         try {
             String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(new Date());
             String imageFileName = "JPEG_" + timeStamp + "_";
-            File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+            File storageDir = Environment.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 
             if (!storageDir.exists())
                 storageDir.mkdirs();
@@ -462,7 +462,7 @@ public class TedBottomPicker extends BottomSheetDialogFragment {
             imageFile = File.createTempFile(
                     imageFileName,  /* prefix */
                     ".jpg",         /* suffix */
-                    getContext().getCacheDir()       /* directory */
+                    storageDir       /* directory */
             );
 
 
